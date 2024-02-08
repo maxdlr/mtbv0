@@ -1,1 +1,115 @@
 @import 'base.scss';
+@import "font/fonts.css";
+
+$red: #e01f20;
+$blue: #2a00ff;
+$yellow: #ffaa01;
+
+@import "bootstrap";
+
+.title-font {
+  font-family: 'Geomanist', serif;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+.para-font {
+  font-family: 'Geomanist Book', serif;
+}
+
+.bg-red-hover {
+  &:hover {
+    background-color: $red;
+
+  }
+}
+
+.bg-blue-hover {
+  &:hover {
+    background-color: $blue;
+
+  }
+}
+
+.bg-yellow-hover {
+  &:hover {
+    background-color: $yellow;
+
+  }
+}
+
+.text-white-hover {
+  &:hover {
+    color: white;
+  }
+}
+
+.text-red-hover {
+  color: white;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.text-blue-hover {
+  color: white;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+.text-yellow-hover {
+  color: white;
+
+  &:hover {
+    color: $yellow;
+  }
+}
+
+.text-red {
+  color: $red;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.text-yellow {
+  color: $yellow;
+}
+
+.line-divider {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: $yellow;
+}
+
+// animations on hover
+
+.anim-up-hover {
+  height: 150px;
+  margin-bottom: 50px;
+
+  & > * {
+    transition: 0.5s;
+    height: 75%;
+  }
+
+  &:hover > * {
+    height: 100%;
+  }
+}

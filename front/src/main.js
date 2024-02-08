@@ -3,7 +3,7 @@ import App from './App.vue'
 import 'bootstrap'
 import { BootstrapIconsPlugin } from 'bootstrap-icons-vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './assets/main.css'
+import './assets/main.scss'
 
 const app = createApp(App)
 app.use(BootstrapIconsPlugin)

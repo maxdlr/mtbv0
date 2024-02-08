@@ -3,11 +3,22 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\SocialLinkRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SocialLinkRepository::class)]
-#[ApiResource]
+#[ApiResource(
+    operations: [
+        new GetCollection(),
+        new Get(),
+        new Get(
+            uriTemplate: '/social_links/name/{name}',
+            uriVariables: 'name',
+        )
+    ]
+)]
 class SocialLink
 {
     #[ORM\Id]
