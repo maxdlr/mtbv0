@@ -24,6 +24,10 @@ class Prompt
     #[ORM\Column(length: 255)]
     private ?string $nameEn = null;
 
+    #[ORM\ManyToOne(inversedBy: 'prompts')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?PromptList $promptList = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +65,18 @@ class Prompt
     public function setNameEn(string $nameEn): static
     {
         $this->nameEn = $nameEn;
+
+        return $this;
+    }
+
+    public function getPromptList(): ?PromptList
+    {
+        return $this->promptList;
+    }
+
+    public function setPromptList(?PromptList $promptList): static
+    {
+        $this->promptList = $promptList;
 
         return $this;
     }
