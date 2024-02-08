@@ -1,0 +1,52 @@
+
+###> symfony/framework-bundle ###
+back/.env.local
+back/.env.local.php
+back/.env.*.local
+back/config/secrets/prod/prod.decrypt.private.php
+back/public/bundles/
+back/var/
+back/vendor/
+###< symfony/framework-bundle ###
+
+###> vue ###
+# Logs
+front/logs
+front/*.log
+front/npm-debug.log*
+front/yarn-debug.log*
+front/yarn-error.log*
+front/pnpm-debug.log*
+front/lerna-debug.log*
+
+front/node_modules
+front/.DS_Store
+front/dist
+front/dist-ssr
+front/coverage
+front/*.local
+
+front/cypress/videos/
+front/cypress/screenshots/
+
+# Editor directories and files
+front/.vscode/*
+front/!.vscode/extensions.json
+front/.idea
+front/*.suo
+front/*.ntvs*
+front/*.njsproj
+front/*.sln
+front/*.sw?
+
+front/*.tsbuildinfo
+
+###< vue ###
+
+###> custom ###
+
+.idea
+back/.idea
+front/.idea
+
+###< custom ###
