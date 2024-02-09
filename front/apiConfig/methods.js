@@ -15,7 +15,7 @@ export async function get(url) {
   }
 }
 
-export async function post(url, formObject, collection) {
+export async function post(url, formObject) {
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -23,10 +23,13 @@ export async function post(url, formObject, collection) {
   }
 
   fetch(url, requestOptions).then((response) => {
-    if (!response.ok) {
-      console.log(response.error)
+    if (response.ok) {
+      console.log('This was posted: -----', JSON.stringify(formObject))
     }
 
-    get(collection)
+    if (!response.ok) {
+      console.log(response.error)
+      console.log('This was the attempted post body: ----', JSON.stringify(formObject))
+    }
   })
 }

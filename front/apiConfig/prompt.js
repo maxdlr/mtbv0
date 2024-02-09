@@ -1,10 +1,10 @@
 import { BASE_API_URL } from './config.js'
-import { get } from './methods.js'
+import { get, post } from './methods.js'
 
 const endPointName = '/prompts'
 let url = `${BASE_API_URL}${endPointName}`
 
-export function getAllPrompts(collection, filterBy = '', filterArg = 0) {
+export function getPrompts(collection, filterBy = '', filterArg = 0) {
   if (filterBy === '' || filterArg === 0) {
     return get(url).then((r) => (collection.value = r))
   }
@@ -25,4 +25,10 @@ export function getAllPrompts(collection, filterBy = '', filterArg = 0) {
   }
 
   return get(url).then((r) => (collection.value = r))
+}
+
+export function postPrompt(formObject) {
+  post(url, formObject).then((r) => {
+    return r === null
+  })
 }

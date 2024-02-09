@@ -1,7 +1,5 @@
 <script setup>
-import MPromptItem from '@/components/MPromptItem.vue'
-import { ref } from 'vue'
-import { getAllPrompts } from '../../apiConfig/prompt.js'
+import MPromptItem from '@/components/1-atom/MPromptItem.vue'
 
 defineProps({
   prompts: Array

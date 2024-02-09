@@ -21,7 +21,14 @@ const propSetup = {
 </script>
 
 <template>
-  <div class="d-flex align-items-end" :class="[animHover ? 'anim-up-hover' : '']">
+  <div
+    class="d-flex align-items-end"
+    :class="[
+      propSetup.classes.global,
+      animHover ? 'anim-up-hover' : '',
+      pill ? 'rounded-pill' : ''
+    ]"
+  >
     <a
       class="btn"
       :href="link"

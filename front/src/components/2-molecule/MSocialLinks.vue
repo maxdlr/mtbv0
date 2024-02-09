@@ -1,7 +1,5 @@
 <script setup>
-import MButton from '@/components/MButton.vue'
-import { ref } from 'vue'
-import { getAllSocialLinks } from '../../apiConfig/socialLink.js'
+import MButton from '@/components/1-atom/MButton.vue'
 
 defineProps({
   links: Array

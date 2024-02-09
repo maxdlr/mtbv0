@@ -4,12 +4,11 @@ import { get } from './methods.js'
 const endPointName = '/social_links'
 let url = `${BASE_API_URL}${endPointName}`
 
-export function getAllSocialLinks(collection) {
+export function getSocialLinks(collection) {
   return get(url).then((r) => (collection.value = r))
 }
 
 export function getSocialLink(name, item) {
   url += '/name/' + name
-
-  return get(url).then((r) => (item.value = r))
+  return get(url).then((r) => (item.value = r.link))
 }
