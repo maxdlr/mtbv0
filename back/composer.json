@@ -63,7 +63,7 @@
     },
     "scripts": {
         "ss": "symfony server:start -d && symfony open:local",
-        "dbu": "symfony console d:d:d -f && symfony console d:d:c && symfony console d:m:m --no-interaction && symfony console make:migration && symfony console d:m:m --no-interaction && symfony console d:f:l --no-interaction",
+        "dbu": "symfony console d:d:d -f --if-exists && symfony console d:d:c --if-not-exists && symfony console d:m:m --no-interaction && symfony console make:migration && symfony console d:m:m --no-interaction && symfony console d:f:l --no-interaction",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
