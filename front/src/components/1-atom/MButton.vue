@@ -7,12 +7,16 @@ defineProps({
   yellow: Boolean,
   labeled: Boolean,
   pill: Boolean,
-  animHover: Boolean
+  animHover: Boolean,
+  isLink: Boolean,
+  type: String,
+  big: Boolean
 })
 
 const propSetup = {
   classes: {
-    global: 'pt-1 px-3 m-0 fs-3',
+    globalBig: 'pt-1 px-3 m-0 fs-3',
+    globalSmall: 'px-3 m-0 fs-5',
     red: 'bg-red text-red-hover',
     blue: 'bg-blue text-blue-hover',
     yellow: 'bg-yellow text-yellow-hover'
@@ -21,7 +25,23 @@ const propSetup = {
 </script>
 
 <template>
+  <button
+    v-if="isLink === true"
+    :type="type"
+    class="btn"
+    :class="[
+      big ? propSetup.classes.globalBig : propSetup.classes.globalSmall,
+      red ? propSetup.classes.red : '',
+      blue ? propSetup.classes.blue : '',
+      yellow ? propSetup.classes.yellow : '',
+      pill ? 'rounded-pill' : ''
+    ]"
+  >
+    {{ label }}
+  </button>
+
   <div
+    v-if="isLink === false"
     class="d-flex align-items-end"
     :class="[
       propSetup.classes.global,
@@ -33,7 +53,7 @@ const propSetup = {
       class="btn"
       :href="link"
       :class="[
-        propSetup.classes.global,
+        big ? propSetup.classes.globalBig : propSetup.classes.globalSmall,
         red ? propSetup.classes.red : '',
         blue ? propSetup.classes.blue : '',
         yellow ? propSetup.classes.yellow : '',

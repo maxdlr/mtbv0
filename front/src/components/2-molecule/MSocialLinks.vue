@@ -17,6 +17,7 @@ defineProps({
         :yellow="index % 3 === 2"
         :pill="true"
         :anim-hover="true"
+        :big="true"
       >
         <BIconInstagram v-if="name === 'instagram'" />
         <BIconYoutube v-if="name === 'youtube'" />

@@ -30,3 +30,9 @@ export function getPrompts(collection, filterBy = '', filterArg = 0) {
 export function postPrompt(formObject) {
   return post(url, formObject)
 }
+
+export function promptExists(nameFr) {
+  url += '/nameFr/' + nameFr
+  console.log(url)
+  return get(url).then((r) => r.status === 200)
+}

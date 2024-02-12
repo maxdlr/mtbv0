@@ -2,7 +2,8 @@
 import MPromptItem from '@/components/1-atom/MPromptItem.vue'
 
 defineProps({
-  prompts: Array
+  prompts: Array,
+  year: Number
 })
 
 const propSetup = {
@@ -15,6 +16,9 @@ const propSetup = {
 
 <template>
   <section class="container-lg">
+    <div class="text-center title-font text-red fw-bold fs-1 my-3 py-0">
+      {{ year }}
+    </div>
     <article class="row justify-content-center">
       <div :class="propSetup.classes.col">
         <div v-for="({ day, nameFr, nameEn }, index) in prompts" :key="day">

@@ -24,8 +24,8 @@ getPrompts(prompts, 'year', currentYear)
       img-url="/src/assets/images/Logo_MTB.png"
       class="col-6 col-md-4 offset-md-4 col-lg-2 offset-lg-5 offset-3"
     />
-    <MSocialLinks :links="links" class="mb-4" />
-    <MPromptList :prompts="prompts" />
+    <MSocialLinks :links="links" />
+    <MPromptList :prompts="prompts" :year="currentYear" />
   </main>
   <div class="line-divider"></div>
   <footer class="fs-5 text-center title-font text-red fw-bold my-5">

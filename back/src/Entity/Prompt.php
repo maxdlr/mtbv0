@@ -5,14 +5,31 @@ namespace App\Entity;
 use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Post;
 use App\Repository\PromptRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PromptRepository::class)]
 #[ApiResource(
-    paginationEnabled: false,
+    operations: [
+        new GetCollection(),
+        new Get(
+            uriTemplate: '/prompts/nameFr/{nameFr}',
+            uriVariables: 'nameFr',
+        ),
+        new Post()
+
+    ],
+    paginationEnabled: false
 )]
-#[ApiFilter(SearchFilter::class, properties: ['promptList.year' => 'exact'])]
+#[ApiFilter(SearchFilter::class,
+    properties: [
+        'promptList.year' => 'exact',
+        'nameFr' => 'exact',
+        'nameEn' => 'exact'
+    ])]
 class Prompt
 {
     #[ORM\Id]
