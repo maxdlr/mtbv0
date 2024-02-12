@@ -28,7 +28,5 @@ export function getPrompts(collection, filterBy = '', filterArg = 0) {
 }
 
 export function postPrompt(formObject) {
-  post(url, formObject).then((r) => {
-    return r === null
-  })
+  return post(url, formObject)
 }

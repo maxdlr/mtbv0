@@ -1,17 +1,19 @@
 <script setup>
 import MPromptForm from '@/components/2-molecule/MPromptForm.vue'
 import { postPrompt } from '../../../apiConfig/prompt.js'
+import { ref } from 'vue'
+
+const isPosted = ref(false)
 
 const postFilledForm = (formData) => {
-  if (postPrompt(formData)) {
-    console.log('Prompt ' + formData.nameFr + ' is posted !!')
-  }
+
+    isPosted.value = postPrompt(formData, isPosted)
 }
 </script>
 
 <template>
-  <div v-for="index in 2">
-    <MPromptForm :day-number="index" @is-filled="postFilledForm" />
+  <div v-for="index in 2" :key="index">
+    <MPromptForm :day-number="index" @is-filled="postFilledForm" :is-posted="isPosted" />
   </div>
 </template>
 

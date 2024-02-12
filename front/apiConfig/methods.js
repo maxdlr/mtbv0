@@ -22,14 +22,18 @@ export async function post(url, formObject) {
     body: JSON.stringify(formObject)
   }
 
+  const isPosted = false
+
   fetch(url, requestOptions).then((response) => {
     if (response.ok) {
       console.log('This was posted: -----', JSON.stringify(formObject))
+      return true
     }
 
     if (!response.ok) {
       console.log(response.error)
       console.log('This was the attempted post body: ----', JSON.stringify(formObject))
+      return false
     }
   })
 }

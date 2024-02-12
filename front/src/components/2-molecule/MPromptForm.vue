@@ -1,10 +1,10 @@
 <script setup>
 import MTextField from '@/components/1-atom/MTextField.vue'
 import { ref } from 'vue'
-import MButton from '@/components/1-atom/MButton.vue'
 
 defineProps({
-  dayNumber: Number
+  dayNumber: Number,
+  isPosted : Boolean
 })
 
 const emit = defineEmits(['isFilled'])
