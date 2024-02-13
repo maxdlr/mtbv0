@@ -17,11 +17,6 @@ const routes = [
     name: 'home',
     component: () => import('@/components/4-template/PageHome.vue')
   }
-  // {
-  //   path: '/admin',
-  //   name: 'admin',
-  //   component: () => import('@/components/4-template/PageAdmin.vue')
-  // }
 ]
 
 const router = createRouter({
