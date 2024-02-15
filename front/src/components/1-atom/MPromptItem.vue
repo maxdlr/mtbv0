@@ -54,11 +54,11 @@ const propSetup = {
       <BIconCheckLg v-if="copied === true" class="anim-rotate-load" />
     </div>
 
-    <div>{{ day }}</div>
+    <div class="text-nowrap">{{ day }}</div>
     <div class="mx-2">-</div>
-    <div>{{ nameFr }}</div>
+    <div class="text-nowrap">{{ nameFr }}</div>
     <div class="mx-2">-</div>
-    <div>{{ nameEn }}</div>
+    <div class="text-nowrap">{{ nameEn }}</div>
 
     <div v-if="textEnd" class="ms-3 text-sm-white d-sm-block d-none circle-pop">
       <BIconCopy v-if="copied === false" class="anim-rotate-load" />

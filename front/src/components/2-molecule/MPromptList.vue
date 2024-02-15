@@ -9,7 +9,7 @@ defineProps({
 const propSetup = {
   loopCut: 15,
   classes: {
-    col: 'col-sm-6'
+    col: 'col-sm-6 col-md-5 col-lg-4'
   }
 }
 </script>
